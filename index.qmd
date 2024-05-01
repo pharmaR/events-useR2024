@@ -1,0 +1,18 @@
+---
+title: "Regulatory Repositories"
+---
+
+## Introduction
+
+- R has a meticulously maintained ecosystem, which is immensely valuable in a regulatory space
+- In a regulatory setting, the trust of any software needs to be thoroughly documented (NOTE: replace with more precise wording based on HA documents)
+
+## Goals
+
+- Provide a community-maintained catalog of package quality indicators ("risk metrics")
+- Serve quality indicators in a standard format
+- Thoroughly document the system used to perform quality assessment
+- Demonstrate how regulatory-ready risk assessments can be provided using public quality indicators
+- Serve subsets of packages that conform to a specified risk tolerance
+- Improve transparency of industry R package adoption, endorsement and regulator interaction
+
