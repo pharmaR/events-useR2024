@@ -14,5 +14,5 @@ title: "Regulatory Repositories"
 - Thoroughly document the system used to perform quality assessment
 - Demonstrate how regulatory-ready risk assessments can be provided using public quality indicators
 - Serve subsets of packages that conform to a specified risk tolerance
-- Improve transparency of industry R package adoption, endorsement and regulator interaction
+- Improve transparency of industry R package adoption, endorsement and regulator interaction 
 
