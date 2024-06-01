@@ -1,7 +1,9 @@
 project:
   title: "R Validation Hub: Regulatory Repository"
 
-format: rvalhub-revealjs
+format:
+   rvalhub-revealjs:
+     df-print: kable
 
 
 

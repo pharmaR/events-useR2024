@@ -7,6 +7,10 @@ title: "Regulatory Repositories"
 - R has a meticulously maintained ecosystem, which is immensely valuable in a regulatory space
 - In a regulatory setting, the trust of any software needs to be thoroughly documented (NOTE: replace with more precise wording based on HA documents)
 
+::: {.notes}
+Coline
+:::
+
 ## Goals
 
 - Provide a community-maintained catalog of package quality indicators ("risk metrics")
@@ -14,5 +18,108 @@ title: "Regulatory Repositories"
 - Thoroughly document the system used to perform quality assessment
 - Demonstrate how regulatory-ready risk assessments can be provided using public quality indicators
 - Serve subsets of packages that conform to a specified risk tolerance
-- Improve transparency of industry R package adoption, endorsement and regulator interaction 
+- Improve transparency of industry R package adoption, endorsement and regulator interaction
+
+::: {.notes}
+Coline
+:::
+
+# Interacting with the repo
+
+## Packages risk filters
+
+::: columns
+::: {.column width="50%"}
+- Helper package for system administrators
+- Restricts packages available for installation to those fitting in a policy
+- Uses packages metadata in the repo
+- May be use together with manual checks (e.g. read a statistical review)
+:::
+::: {.column width="50%"}
+- Example of automated filter for safety-critical activities:
+  - Acceptance Criteria 1: “Code Coverage > 95% ”
+  - Acceptance Criteria 2: “Package documentation available”
+:::
+:::
+
+::: {.notes}
+Yann
+:::
+
+## Usage
+
+::: columns
+::: {.column width="40%"}
+### Unfiltered
+```{r}
+#| echo: true
+#| eval: false
+available.packages()
+```
+```{r}
+#| echo: false
+pkgs_nofltr <- readRDS(file = file.path(
+  here::here(), "resources", "pkgs_nofltr.rds"))
+pkgs_nofltr <- cbind(pkgs_nofltr, data.frame("..." = "..."))
+pkgs_nofltr <- pkgs_nofltr[1:3, c("Package", "...")]
+pkgs_nofltr <- rbind(pkgs_nofltr, data.frame("Package" = "...", "..." = "..."))
+rownames(pkgs_nofltr) <- c("1", "2", "3", "...")
+pkgs_nofltr
+```
+:::
+
+::: {.column width="60%"}
+### Filtered
+```{r}
+#| echo: true
+#| eval: false
+fltr <- risk_filter(
+  ReverseDependencies >= 0.99)
+options(available_packages_filters = fltr)
+available.packages()
+```
+```{r}
+#| echo: false
+pkgs_fltr <- readRDS(file = file.path(
+  here::here(), "resources", "pkgs_fltr.rds"))
+pkgs_fltr <- cbind(pkgs_fltr, data.frame("..." = "..."))
+pkgs_fltr <- pkgs_fltr[1:3, c("Package", "...")]
+pkgs_fltr <- rbind(pkgs_fltr, data.frame("Package" = "...", "..." = "..."))
+rownames(pkgs_fltr) <- c("1", "2", "3", "...")
+pkgs_fltr
+```
+:::
+:::
+
+::: {.notes}
+Yann
+:::
+
+# Repository ‘back-end’
+
+## Repository forked from `r-hub/repos`
+
+![](resources/repos_pkgs.png)
+
+::: {.notes}
+Yann
+:::
+
+## Packages cohort validation
+
+* Risk metrics calculated on packages with new versions and on their reverse dependencies
+* Uses the GitHub API to fetch new release assets
+
+```{r}
+#| echo: false
+df_pkg_metrics <- readRDS(file = file.path(
+  here::here(), "resources", "df_pkg_metrics.rds"))
+df_pkg_metrics$pkg_score <- round(df_pkg_metrics$pkg_score, 4)
+df_pkg_metrics[1:3,
+  c("package", "version", "ver_old", "pkg_score", "has_news")]
+```
+
+::: {.notes}
+Yann
+:::
 
