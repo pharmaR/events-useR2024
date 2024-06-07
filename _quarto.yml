@@ -2,8 +2,9 @@ project:
   title: "R Validation Hub: Regulatory Repository"
 
 format:
-   rvalhub-revealjs:
-     df-print: kable
+  rvalhub-revealjs:
+    fontsize: 30px
+    df-print: kable
 
 
 

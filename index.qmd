@@ -1,5 +1,12 @@
 ---
-title: "Regulatory Repositories."
+title: "Regulatory Repositories"
+author:
+  - name: Coline Zeballos
+    affiliations: 
+      - name: Roche
+  - name: Yann Féat
+    affiliations:
+      - name: mainanalytics
 ---
 
 ## Introduction
@@ -48,6 +55,17 @@ Yann
 
 ## Usage
 
+```{r}
+#| echo: false
+summarize_available_packages <- function(ap) {
+  out <- cbind(ap, data.frame("..." = "..."))
+  out <- out[c(1:4, nrow(ap)), c("Package", "...")]
+  out[4,] <- c("...", "...")
+  rownames(out) <- c("1", "2", "3", "...", nrow(ap))
+  out
+}
+```
+
 ::: columns
 ::: {.column width="40%"}
 ### Unfiltered
@@ -58,13 +76,9 @@ available.packages()
 ```
 ```{r}
 #| echo: false
-pkgs_nofltr <- readRDS(file = file.path(
-  here::here(), "resources", "pkgs_nofltr.rds"))
-pkgs_nofltr <- cbind(pkgs_nofltr, data.frame("..." = "..."))
-pkgs_nofltr <- pkgs_nofltr[1:3, c("Package", "...")]
-pkgs_nofltr <- rbind(pkgs_nofltr, data.frame("Package" = "...", "..." = "..."))
-rownames(pkgs_nofltr) <- c("1", "2", "3", "...")
-pkgs_nofltr
+pkgs_nofltr_path <- file.path(here::here(), "resources", "pkgs_nofltr.rds")
+pkgs_nofltr <- readRDS(file = pkgs_nofltr_path)
+summarize_available_packages(pkgs_nofltr)
 ```
 :::
 
@@ -80,13 +94,9 @@ available.packages()
 ```
 ```{r}
 #| echo: false
-pkgs_fltr <- readRDS(file = file.path(
-  here::here(), "resources", "pkgs_fltr.rds"))
-pkgs_fltr <- cbind(pkgs_fltr, data.frame("..." = "..."))
-pkgs_fltr <- pkgs_fltr[1:3, c("Package", "...")]
-pkgs_fltr <- rbind(pkgs_fltr, data.frame("Package" = "...", "..." = "..."))
-rownames(pkgs_fltr) <- c("1", "2", "3", "...")
-pkgs_fltr
+pkgs_fltr_path <- file.path(here::here(), "resources", "pkgs_fltr.rds")
+pkgs_fltr <- readRDS(file = pkgs_fltr_path)
+summarize_available_packages(pkgs_fltr)
 ```
 :::
 :::
