@@ -6,11 +6,10 @@ contributes:
   formats:
     revealjs:
       # general
-
-      self-contained: true
+      embed-resources: true
       theme: [default, custom.scss, custom-light.scss]
       template-partials:
-        - revealjs-assets/title-slide.html      
+        - revealjs-assets/title-slide.html
 
       # code
       highlight-style: arrow
@@ -19,11 +18,15 @@ contributes:
 
       # assets
       logo: assets/logo.svg
-      background-image: assets/swirling-margins.svg
+      ## NOTE:
+      ## background-image embedding currently ignored
+      ## encoded in custom.scss `.reveal .backgrounds { background-image: }` instead
+      ## https://github.com/quarto-dev/quarto-cli/issues/980
+      # background-image: assets/swirling-margins.svg
 
     revealjs+light:
       # general
-      self-contained: true
+      embed-resources: true
       theme: [default, custom.scss, custom-light.scss]
       template-partials:
         - revealjs-assets/title-slide.html      
@@ -35,11 +38,15 @@ contributes:
 
       # assets
       logo: assets/logo.svg
-      background-image: assets/swirling-margins.svg
+      ## NOTE:
+      ## background-image embedding currently ignored
+      ## encoded in custom.scss `.reveal .backgrounds { background-image: }` instead
+      ## https://github.com/quarto-dev/quarto-cli/issues/980
+      # background-image: assets/swirling-margins.svg
 
     revealjs+dark:
       # general
-      self-contained: true
+      embed-resources: true
       theme: [dark, custom.scss, custom-dark.scss]
       template-partials:
         - revealjs-assets/title-slide.html      
@@ -51,4 +58,8 @@ contributes:
 
       # assets
       logo: assets/logo.svg
-      background-image: assets/swirling-margins.svg
+      ## NOTE:
+      ## background-image embedding currently ignored
+      ## encoded in custom.scss `.reveal .backgrounds { background-image: }` instead
+      ## https://github.com/quarto-dev/quarto-cli/issues/980
+      # background-image: assets/swirling-margins.svg
