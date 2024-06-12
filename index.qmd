@@ -31,6 +31,10 @@ Coline
 Coline
 :::
 
+## An evolving R ecosystem
+
+- (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
+
 # Interacting with the repo
 
 ## Packages risk filters
