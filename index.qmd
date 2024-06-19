@@ -145,9 +145,46 @@ Yann
 
 # Closing
 
+## R Consortium Impact
+
+<div class="image-container">
+  <img src="r-ladies-logo.png">
+  <img src="latinr-logo.png">
+  <img src="r-medicine-logo.png">
+  <img src="useR-logo.png">
+  <img src="covid-19-data-forum.png">
+</div>
+
+<style>
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image-container img {
+  margin: 5px;
+  max-width: 150px;  /* Adjust the size of the images as needed */
+}
+</style>
+
+* Community Grants and Sponsorships Over USD $1.4 Million
+* Organize large scale collaborative projects: R Validation Hub, R-Ladies
+* Co-host multidisciplinary data science forums: Stanford Data Institute
+* Direct support for key R events: R/Medicine, R/Pharma, useR!, LatinR, more
+* Direct worldwide support for R User Groups
+
 ## Join us
 
+![](rc-logo.png){width=300}
+
+* Help guide the future direction of the R language
+* Collaborate on cross industry initiatives
+* Raise your leadership profile in the R Community
+* Protect your investment in R while supporting the common good
+
 * (NOTE: link to GH join us issue, add R Consortium info)
+
 
 ## Thank you
 
