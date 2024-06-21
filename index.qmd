@@ -1,22 +1,53 @@
 ---
 title: "Regulatory Repositories"
 author:
-  - name: Coline Zeballos
-    affiliations: 
-      - name: Roche
-  - name: Yann Féat
-    affiliations:
-      - name: mainanalytics
+  - name: "<span>Coline Zeballos</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://www.roche.com'>Roche</a></span>"
+  - name: "<span>Yann Féat</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://mainanalytics.de'>mainanalytics</a></span>"
+reference-location: margin
 ---
 
-## Introduction
 
-- R has a meticulously maintained ecosystem, which is immensely valuable in a regulatory space
-- In a regulatory setting, the trust of any software needs to be thoroughly documented (NOTE: replace with more precise wording based on HA documents)
+
+## A Universal Conundrum {.scrollable}
+
+_There are `n` packages for `x`, which one is the best?[^1]_
+
+![](resources/choosing_a_package.png)
+
+[^1]: [https://stackoverflow.com/questions/28650957]()
 
 ::: {.notes}
 Coline
+
+- A typical "first analysis" question
+- Immediately need to make a decision about which packages to use: base R, `dplyr` or `data.table`
+- Which one is right for me?
 :::
+
+
+
+## A Universal Conundrum
+
+### By choosing packages, we're choosing our [^2]
+
+* Feature set
+* Dependency footprint
+* Integration with other packages
+* Preferred lifecycle management of our tools
+* Community that we can lean on for help
+
+[^2]: [It depends: A dialog about dependencies, Jim Hester (2019)](https://www.jimhester.com/talk/2019-rsc-deps/)
+
+
+
+## A Universal Conundrum
+
+### Regulated Industries: Justification as a Requirement
+
+![](resources/white_paper_guidelines.png)
+
+
+
 
 ## Goals
 
