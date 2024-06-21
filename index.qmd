@@ -35,7 +35,7 @@ Coline
 
 - (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
 
-# Stage 0: overview
+# Stage 0 overview
 
 ![](resources/wizare_of_oz_demo.png)
 
@@ -45,15 +45,19 @@ Coline
 
 ::: columns
 ::: {.column width="50%"}
+
 - Helper package for system administrators
 - Restricts packages available for installation to those fitting in a policy
 - Uses packages metadata in the repo
-- May be used together with manual checks (e.g. read a statistical review)
+- May be used together with manual checks (e.g., read a statistical review)
 :::
 ::: {.column width="50%"}
-- Example of automated filter for safety-critical activities:
-  - Acceptance Criteria 1: “Code Coverage > 95% ”
-  - Acceptance Criteria 2: “Package documentation available”
+```{mermaid}
+flowchart TD
+  A[All packages] --> B{Code Coverage\n > 95%?}
+  B --> C{Documentation \n available?}
+  C --> D(Available for safety-critical activities)
+```
 :::
 :::
 
@@ -75,7 +79,7 @@ summarize_available_packages <- function(ap) {
 ```
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="50%"}
 ### Unfiltered
 ```{r}
 #| echo: true
@@ -90,12 +94,13 @@ summarize_available_packages(pkgs_nofltr)
 ```
 :::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 ### Filtered
 ```{r}
 #| echo: true
 #| eval: false
-fltr <- risk_filter(covr_coverage > 0.95 && has_vignettes)
+fltr <- risk_filter(covr_coverage > 0.95
+  && has_vignettes)
 options(available_packages_filters = fltr)
 available.packages()
 ```
