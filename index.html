@@ -1296,7 +1296,7 @@ display:block!important;
 <li>Helper package for system administrators</li>
 <li>Restricts packages available for installation to those fitting in a policy</li>
 <li>Uses packages metadata in the repo</li>
-<li>May be use together with manual checks (e.g. read a statistical review)</li>
+<li>May be used together with manual checks (e.g. read a statistical review)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
@@ -1375,10 +1375,9 @@ display:block!important;
 </div><div class="column" style="width:60%;">
 <h3 id="filtered">Filtered</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href></a>fltr <span class="ot">&lt;-</span> <span class="fu">risk_filter</span>(</span>
-<span id="cb2-2"><a href></a>  ReverseDependencies <span class="sc">&gt;=</span> <span class="fl">0.99</span>)</span>
-<span id="cb2-3"><a href></a><span class="fu">options</span>(<span class="at">available_packages_filters =</span> fltr)</span>
-<span id="cb2-4"><a href></a><span class="fu">available.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href></a>fltr <span class="ot">&lt;-</span> <span class="fu">risk_filter</span>(covr_coverage <span class="sc">&gt;</span> <span class="fl">0.95</span> <span class="sc">&amp;&amp;</span> has_vignettes)</span>
+<span id="cb2-2"><a href></a><span class="fu">options</span>(<span class="at">available_packages_filters =</span> fltr)</span>
+<span id="cb2-3"><a href></a><span class="fu">available.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
