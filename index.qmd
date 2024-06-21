@@ -35,6 +35,10 @@ Coline
 
 - (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
 
+# Stage 0: overview
+
+![](resources/wizare_of_oz_demo.png)
+
 # Interacting with the repo
 
 ## Packages risk filters
@@ -163,6 +167,12 @@ Yann
 :::
 
 # Our roadmap
+
+## Reference container image(s)
+
+- Should mimic environments of companies and health authority reviewers
+- Integrates with most modern analytic workbench tools and an evaluation pipeline
+- To be used by the Regulatory R Repository for packages cohort validation
 
 ## What's next
 
