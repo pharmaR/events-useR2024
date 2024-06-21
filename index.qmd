@@ -44,7 +44,7 @@ Coline
 - Helper package for system administrators
 - Restricts packages available for installation to those fitting in a policy
 - Uses packages metadata in the repo
-- May be use together with manual checks (e.g. read a statistical review)
+- May be used together with manual checks (e.g. read a statistical review)
 :::
 ::: {.column width="50%"}
 - Example of automated filter for safety-critical activities:
