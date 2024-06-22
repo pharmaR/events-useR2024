@@ -152,7 +152,7 @@ Yann
 
 ## Repository forked from `r-hub/repos`
 
-Canonical fields in a package repository
+Canonical fields in a package repository (DCF file)
 ```{.yaml}
 Package: bslib
 Version: 0.6.1
