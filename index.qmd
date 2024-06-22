@@ -148,11 +148,11 @@ Yann
 ## R Consortium Impact
 
 <div class="image-container">
-  <img src="r-ladies-logo.png">
-  <img src="latinr-logo.png">
-  <img src="r-medicine-logo.png">
-  <img src="useR-logo.png">
-  <img src="covid-19-data-forum.png">
+  <img src="resources/r-ladies-logo.png">
+  <img src="resources/latinr-logo.png">
+  <img src="resources/r-medicine-logo.png">
+  <img src="resources/useR-logo.png">
+  <img src="resources/covid-19-data-forum.png">
 </div>
 
 <style>
