@@ -520,7 +520,7 @@ Yann
 
 ## Join us
 
-![](rc-logo.png){width=300}
+![](resources/rc-logo.png){width=300}
 
 * Help guide the future direction of the R language
 * Collaborate on cross industry initiatives
