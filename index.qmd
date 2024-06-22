@@ -152,7 +152,7 @@ Yann
 
 ## Repository forked from `r-hub/repos`
 
-Mandatory package metadata for a package repository
+Canonical fields in a package repository
 ```{.yaml}
 Package: bslib
 Version: 0.6.1
@@ -186,16 +186,184 @@ Yann
 
 ## Packages cohort validation
 
-* Risk metrics calculated on packages with new versions and on their reverse dependencies
-* Uses the GitHub API to fetch new release assets
+```{dot}
+digraph D {
+  node [shape=plaintext fontname="Sans serif" fontsize="30"];
 
-```{r}
-#| echo: false
-df_pkg_metrics <- readRDS(file = file.path(
-  here::here(), "resources", "df_pkg_metrics.rds"))
-df_pkg_metrics$pkg_score <- round(df_pkg_metrics$pkg_score, 4)
-df_pkg_metrics[1:3,
-  c("package", "version", "ver_old", "pkg_score", "has_news")]
+  pkg_1 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_1</b></td></tr>
+     <tr><td align="left">Version: 1.15</td></tr>
+     <tr><td align="left">covr_coverage: 0.967</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.359</td></tr>
+   </table>>];
+   
+  pkg_2 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_2</b></td></tr>
+     <tr><td align="left">Version: 3.5</td></tr>
+     <tr><td align="left">covr_coverage: 0.984</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.154</td></tr>
+   </table>>];
+   
+  pkg_3 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_3</b></td></tr>
+     <tr><td align="left">Version: 1.9</td></tr>
+     <tr><td align="left">covr_coverage: 0.992</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.312</td></tr>
+   </table>>];
+   
+  pkg_4 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_4</b></td></tr>
+     <tr><td align="left">Version: 0.5</td></tr>
+     <tr><td align="left">covr_coverage: 0.864</td></tr>
+     <tr><td align="left">has_vignettes: 0</td></tr>
+     <tr><td align="left">pkg_score: 0.414</td></tr>
+   </table>>];
+   
+  pkg_5 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_5</b></td></tr>
+     <tr><td align="left">Version: 4.2</td></tr>
+     <tr><td align="left">covr_coverage: 0.924</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.234</td></tr>
+   </table>>];
+
+  pkg_2 -> pkg_1;
+  pkg_3 -> pkg_1;
+  pkg_3 -> pkg_2;
+  pkg_5 -> pkg_4;
+}
+```
+
+::: {.notes}
+Yann
+:::
+
+## Packages cohort validation
+
+```{dot}
+digraph D {
+  node [shape=plaintext fontname="Sans serif" fontsize="30"];
+
+  pkg_1 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_1</b></td></tr>
+     <tr><td align="left">Version: 1.15</td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+   </table>>];
+   
+  pkg_2 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_2</b></td></tr>
+     <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+   </table>>];
+   
+  pkg_3 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_3</b></td></tr>
+     <tr><td align="left">Version: 1.9</td></tr>
+     <tr><td align="left">covr_coverage: 0.992</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.312</td></tr>
+   </table>>];
+   
+  pkg_4 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_4</b></td></tr>
+     <tr><td align="left">Version: 0.5</td></tr>
+     <tr><td align="left">covr_coverage: 0.864</td></tr>
+     <tr><td align="left">has_vignettes: 0</td></tr>
+     <tr><td align="left">pkg_score: 0.414</td></tr>
+   </table>>];
+   
+  pkg_5 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_5</b></td></tr>
+     <tr><td align="left">Version: 4.2</td></tr>
+     <tr><td align="left">covr_coverage: 0.924</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.234</td></tr>
+   </table>>];
+
+  pkg_2 -> pkg_1;
+  pkg_3 -> pkg_1;
+  pkg_3 -> pkg_2;
+  pkg_5 -> pkg_4;
+}
+```
+
+::: {.notes}
+Yann
+:::
+
+## Packages cohort validation
+
+```{dot}
+digraph D {
+  node [shape=plaintext fontname="Sans serif" fontsize="30"];
+
+  pkg_1 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_1</b></td></tr>
+     <tr><td align="left">Version: 1.15</td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.967</font></b></td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.314</font></b></td></tr>
+   </table>>];
+   
+  pkg_2 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_2</b></td></tr>
+     <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.987</font></b></td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.148</font></b></td></tr>
+   </table>>];
+   
+  pkg_3 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_3</b></td></tr>
+     <tr><td align="left">Version: 1.9</td></tr>
+     <tr><td align="left">covr_coverage: 0.992</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.312</td></tr>
+   </table>>];
+   
+  pkg_4 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_4</b></td></tr>
+     <tr><td align="left">Version: 0.5</td></tr>
+     <tr><td align="left">covr_coverage: 0.864</td></tr>
+     <tr><td align="left">has_vignettes: 0</td></tr>
+     <tr><td align="left">pkg_score: 0.414</td></tr>
+   </table>>];
+   
+  pkg_5 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+     <tr><td align="left"><b>pkg_5</b></td></tr>
+     <tr><td align="left">Version: 4.2</td></tr>
+     <tr><td align="left">covr_coverage: 0.924</td></tr>
+     <tr><td align="left">has_vignettes: 1</td></tr>
+     <tr><td align="left">pkg_score: 0.234</td></tr>
+   </table>>];
+
+  pkg_2 -> pkg_1;
+  pkg_3 -> pkg_1;
+  pkg_3 -> pkg_2;
+  pkg_5 -> pkg_4;
+}
 ```
 
 ::: {.notes}

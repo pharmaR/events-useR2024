@@ -5,6 +5,3 @@ format:
   rvalhub-revealjs:
     fontsize: 30px
     df-print: kable
-
-
-
