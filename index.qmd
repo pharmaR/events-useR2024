@@ -515,7 +515,6 @@ Yann
   <img src="resources/latinr-logo.png">
   <img src="resources/r-medicine-logo.png">
   <img src="resources/useR-logo.png">
-  <img src="resources/covid-19-data-forum.png">
 </div>
 
 <style>
