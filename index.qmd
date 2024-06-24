@@ -78,16 +78,16 @@ Coline
 ::: {.column width="50%"}
 
 - Helper package for system administrators
-- Restricts packages available for installation to those fitting in a policy
+- Restricts packages available for installation to those fitting a policy
 - Uses packages metadata in the repo
 - May be used together with manual checks (e.g., read a statistical review)
 :::
 ::: {.column width="50%"}
 ```{mermaid}
 flowchart TD
-  A[All packages] --> B{Code Coverage\n > 95%?}
-  B --> C{Documentation \n available?}
-  C --> D(Available for safety-critical activities)
+  A[All packages] --> B{Code\n coverage\n > 95%?}
+  B -- Yes --> C{Has\n doc.?}
+  C -- Yes --> D(Available for safety-critical activities)
 ```
 :::
 :::
@@ -150,9 +150,18 @@ Yann
 
 # Repository ‘back-end’
 
-## Repository forked from `r-hub/repos`
+## Infrastructure setup
 
-Canonical fields in a package repository (DCF file)
+::: columns
+::: {.column width="50%"}
+- Hosts risk assessment metadata
+- Integrates with `pak::pkg_install`
+- Supports multiple levels of risk tolerance
+- Should allow for reproducible package installation to support historical analysis (snapshot, etc.)
+:::
+
+::: {.column width="50%"}
+DCF file forked from ``r-hub/repo``
 ```{.yaml}
 Package: bslib
 Version: 0.6.1
@@ -172,13 +181,23 @@ riskmetric_version: 0.2.1
 pkg_score: 0.291481580696657
 covr_coverage: 0.852820470987098
 has_vignettes: 1
-has_news: 1
-reverse_dependencies: 0.900122893005357
-dependencies: 0.0474258731775666
 remote_checks: 0.846153846153846
-has_maintainer: 1
 ...
 ```
+:::
+:::
+
+::: {.notes}
+Yann
+:::
+
+## Packages cohort validation workflow
+
+### Risk assessment pipeline
+
+- Calculate package QA metadata on updated packages and their reverse dependencies
+- Produces logs and other reproducibility data
+- Should be able to additionally run on private infrastructure
 
 ::: {.notes}
 Yann
@@ -477,15 +496,15 @@ Yann
 
 # Our roadmap
 
+## What's next
+
+![](resources/stage-1.png)
+
 ## Reference container image(s)
 
 - Should mimic environments of companies and health authority reviewers
 - Integrates with most modern analytic workbench tools and an evaluation pipeline
 - To be used by the Regulatory R Repository for packages cohort validation
-
-## What's next
-
-* (NOTE: STAGE 1: Pipeline Integration)
 
 # Closing
 
