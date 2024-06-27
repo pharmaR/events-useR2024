@@ -66,9 +66,16 @@ Coline
 
 - (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
 
-# Stage 0 overview
 
-![](resources/wizare_of_oz_demo.png)
+
+# Pilot Implementation
+
+_focus on proving capabilities, quick development_
+
+![](resources/pilot.drawio.svg)
+
+
+
 
 # Interacting with the repo
 
@@ -162,7 +169,7 @@ Yann
 
 ::: {.column width="50%"}
 DCF file forked from ``r-hub/repo``
-```{.yaml}
+```{.yaml code-line-numbers="10"}
 Package: bslib
 Version: 0.6.1
 Depends: R (>= 2.10), R (>= 4.4), R (< 4.4.99)
@@ -172,16 +179,19 @@ RVersion: 4.4
 Platform: x86_64-pc-linux-gnu-ubuntu-22.04
 Imports: base64enc, cachem, grDevices, htmltools (>= 0.5.7), jquerylib (>= 0.1.3),
          jsonlite, lifecycle, memoise (>= 2.0.1), mime, rlang, sass (>= 0.4.0)
+DownloadURL: https://github.com/cran/bslib/releases/download/0.7.0/bslib_0.7.0_b2_R4.5_x86_64-pc-linux-gnu-ubuntu-22.04.tar.gz
 ...
 ```
+
 Added fields for risk-based assessment
+
 ```{.yaml code-line-numbers="4-5"}
 riskmetric_run_date: 2023-06-21
 riskmetric_version: 0.2.1
-pkg_score: 0.291481580696657
-covr_coverage: 0.852820470987098
+pkg_score: 0.29
+covr_coverage: 0.85
 has_vignettes: 1
-remote_checks: 0.846153846153846
+remote_checks: 0.84
 ...
 ```
 :::
@@ -437,6 +447,7 @@ for (i in seq_along(gh_repos)) {
 
 ## Implementation: post-process the results
 
+
 ```{.r echo=TRUE eval=FALSE code-line-numbers="1,7-9,14-16,23"}
 df_cmp_releases <- df_releases %>%
   dplyr::select(
@@ -498,7 +509,9 @@ Yann
 
 ## What's next
 
-![](resources/stage-1.png)
+_Automating up-to-date quality metrics to support sponsor risk assessment_
+
+![](resources/next-steps.drawio.svg)
 
 ## Reference container image(s)
 
@@ -508,45 +521,79 @@ Yann
 
 # Closing
 
-## R Consortium Impact
+## ![](resources/rc-logo.png){height="1.5em" style="padding: 0.2em; margin: 0 0.5em 0 0; border-radius: 0.5em; background: #FFF; vertical-align: middle;"} [R Consortium]{.hidden} Impact
+
+<style>
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container img {
+  margin: 0.2em;
+  max-width: 7em;  /* Adjust the size of the images as needed */
+  vertical-align: middle;
+}
+
+.panel {
+  font-size: 0.6em;
+  background: rgba(0.75, 0.75, 0.75, 0.1);
+  padding: 1%;
+  margin: 1%;
+  border-radius: 0.5em;
+  border-bottom: solid 0.2em rgba(1, 1, 1, 0.1);
+}
+
+.center {
+  text-align: center;
+}
+</style>
 
 <div class="image-container">
   <img src="resources/r-ladies-logo.png">
   <img src="resources/latinr-logo.png">
   <img src="resources/r-medicine-logo.png">
   <img src="resources/useR-logo.png">
-  <img src="resources/covid-19-data-forum.png">
 </div>
 
-<style>
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+::: {.columns}
+::: {.column width="29%" .panel .center}
+### Community Grants & Sponsorships
+Over USD $1.4 Million
+:::
 
-.image-container img {
-  margin: 5px;
-  max-width: 150px;  /* Adjust the size of the images as needed */
-}
-</style>
+::: {.column width="29%" .panel .center}
+### Organizing Large Scale Collaborative Projects
+R Validation Hub, R-Ladies
+:::
 
-* Community Grants and Sponsorships Over USD $1.4 Million
-* Organize large scale collaborative projects: R Validation Hub, R-Ladies
-* Co-host multidisciplinary data science forums: Stanford Data Institute
-* Direct support for key R events: R/Medicine, R/Pharma, useR!, LatinR, more
-* Direct worldwide support for R User Groups
+::: {.column width="29%" .panel .center}
+### Co-Host Multidisciplinary Data Science Forums
+Stanford Data Institute
+:::
+
+::: {.column width="29%" .panel .center}
+### Direct Support for Key R Events
+R/Medicine, R/Pharma, useR!, LatinR, and more
+:::
+
+::: {.column width="29%" .panel .center}
+### Direct Worldwide Support for R User Groups
+:::
+:::
 
 ## Join us
 
-![](resources/rc-logo.png){width=300}
+### [r-consortium.org](https://www.r-consortium.org)
+
+![](resources/rc-logo.png){ width="60%" .nostretch }
+
 
 * Help guide the future direction of the R language
 * Collaborate on cross industry initiatives
 * Raise your leadership profile in the R Community
 * Protect your investment in R while supporting the common good
-
-* (NOTE: link to GH join us issue, add R Consortium info)
 
 
 ## Thank you
