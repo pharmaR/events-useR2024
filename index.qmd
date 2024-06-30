@@ -148,6 +148,7 @@ Yann
 ::: columns
 ::: {.column width="50%"}
 - Hosts risk assessment metadata
+- Links to artifacts of the R-hub check system (via `DownloadURL`)
 - Integrates with `pak::pkg_install`
 - Supports multiple levels of risk tolerance
 :::
