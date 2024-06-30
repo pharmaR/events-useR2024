@@ -57,9 +57,11 @@ Coline
 
 - (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
 
-# Stage 0 overview
+# Pilot Implementation
 
-![](resources/wizare_of_oz_demo.png)
+_focus on proving capabilities, quick development_
+
+![](resources/pilot.drawio.svg)
 
 # Interacting with the repo
 
@@ -377,7 +379,9 @@ Yann
 
 ## What's next
 
-![](resources/stage-1.png)
+_Automating up-to-date quality metrics to support sponsor risk assessment_
+
+![](resources/next-steps.drawio.svg)
 
 ## Reference container image(s)
 
@@ -388,45 +392,78 @@ Yann
 
 # Closing
 
-## R Consortium Impact
+## ![](resources/rc-logo.png){height="1.5em" style="padding: 0.2em; margin: 0 0.5em 0 0; border-radius: 0.5em; background: #FFF; vertical-align: middle;"} [R Consortium]{.hidden} Impact
+
+<style>
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container img {
+  margin: 0.2em;
+  max-width: 7em;  /* Adjust the size of the images as needed */
+  vertical-align: middle;
+}
+
+.panel {
+  font-size: 0.6em;
+  background: rgba(0.75, 0.75, 0.75, 0.1);
+  padding: 1%;
+  margin: 1%;
+  border-radius: 0.5em;
+  border-bottom: solid 0.2em rgba(1, 1, 1, 0.1);
+}
+
+.center {
+  text-align: center;
+}
+</style>
 
 <div class="image-container">
   <img src="resources/r-ladies-logo.png">
   <img src="resources/latinr-logo.png">
   <img src="resources/r-medicine-logo.png">
   <img src="resources/useR-logo.png">
-  <img src="resources/covid-19-data-forum.png">
 </div>
 
-<style>
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+::: {.columns}
+::: {.column width="29%" .panel .center}
+### Community Grants & Sponsorships
+Over USD $1.4 Million
+:::
 
-.image-container img {
-  margin: 5px;
-  max-width: 150px;  /* Adjust the size of the images as needed */
-}
-</style>
+::: {.column width="29%" .panel .center}
+### Organizing Large Scale Collaborative Projects
+R Validation Hub, R-Ladies
+:::
 
-* Community Grants and Sponsorships Over USD $1.4 Million
-* Organize large scale collaborative projects: R Validation Hub, R-Ladies
-* Co-host multidisciplinary data science forums: Stanford Data Institute
-* Direct support for key R events: R/Medicine, R/Pharma, useR!, LatinR, more
-* Direct worldwide support for R User Groups
+::: {.column width="29%" .panel .center}
+### Co-Host Multidisciplinary Data Science Forums
+Stanford Data Institute
+:::
+
+::: {.column width="29%" .panel .center}
+### Direct Support for Key R Events
+R/Medicine, R/Pharma, useR!, LatinR, and more
+:::
+
+::: {.column width="29%" .panel .center}
+### Direct Worldwide Support for R User Groups
+:::
+:::
 
 ## Join us
 
-![](resources/rc-logo.png){width=300}
+### [r-consortium.org](https://www.r-consortium.org)
+
+![](resources/rc-logo.png){ width="60%" .nostretch }
 
 * Help guide the future direction of the R language
 * Collaborate on cross industry initiatives
 * Raise your leadership profile in the R Community
 * Protect your investment in R while supporting the common good
-
-* (NOTE: link to GH join us issue, add R Consortium info)
 
 ## Thank you
 
