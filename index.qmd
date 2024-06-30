@@ -85,7 +85,7 @@ Coline
 ::: {.column width="50%"}
 ```{mermaid}
 flowchart TD
-  A[All packages] --> B{Code\n coverage\n > 95%?}
+  A[All packages] --> B{Code\n covr.\n > 95%?}
   B -- Yes --> C{Has\n doc.?}
   C -- Yes --> D(Available for safety-critical activities)
 ```
@@ -178,10 +178,10 @@ Added fields for risk-based assessment
 ```{.yaml code-line-numbers="4-5"}
 riskmetric_run_date: 2023-06-21
 riskmetric_version: 0.2.1
-pkg_score: 0.291481580696657
-covr_coverage: 0.852820470987098
+pkg_score: 0.29
+covr_coverage: 0.852
 has_vignettes: 1
-remote_checks: 0.846153846153846
+remote_checks: 0.846
 ...
 ```
 :::
