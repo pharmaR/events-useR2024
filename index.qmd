@@ -131,7 +131,7 @@ summarize_available_packages(pkgs_nofltr)
 #| echo: true
 #| eval: false
 fltr <- risk_filter(covr_coverage > 0.95
-  && has_vignettes)
+  & has_vignettes)
 options(available_packages_filters = fltr)
 available.packages()
 ```
