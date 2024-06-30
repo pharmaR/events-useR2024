@@ -186,9 +186,17 @@ Yann
 
 ### Risk assessment pipeline
 
-- Calculate package QA metadata on updated packages and their reverse dependencies
+:::: {.columns}
+::: {.column width="40%"}
+`\symbol{"0394}`{=latex}MAT
+:::
+
+::: {.column width="60%"}
+- Calculates package QA metadata on updated packages and their reverse dependencies
 - Produces logs and other reproducibility data
 - Should be able to additionally run on private infrastructure
+:::
+::::
 
 ::: {.notes}
 Yann
