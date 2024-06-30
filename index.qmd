@@ -158,6 +158,8 @@ Package: bslib
 Version: 0.6.1
 Depends: R (>= 2.10), R (>= 4.4), R (< 4.4.99)
 License: MIT + file LICENSE
+DownloadURL:
+         https://github.com/cran/bslib/releases/download/0.6.1/bslib_0.6.1_b4_R4.4_x86_64-pc-linux-gnu-ubuntu-22.04.tar.gz
 Built: R 4.4.0; ; 2023-11-29 16:39:06 UTC; unix
 RVersion: 4.4
 Platform: x86_64-pc-linux-gnu-ubuntu-22.04
@@ -166,7 +168,7 @@ Imports: base64enc, cachem, grDevices, htmltools (>= 0.5.7), jquerylib (>= 0.1.3
 ...
 ```
 Added fields for risk-based assessment
-```{.yaml code-line-numbers="4-5"}
+```{.yaml}
 riskmetric_run_date: 2023-06-21
 riskmetric_version: 0.2.1
 covr_coverage: 0.852
@@ -205,7 +207,6 @@ digraph D {
      <tr><td align="left">Version: 1.15</td></tr>
      <tr><td align="left">covr_coverage: 0.967</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.359</td></tr>
    </table>>];
    
   pkg_2 [ label=<
@@ -214,7 +215,6 @@ digraph D {
      <tr><td align="left">Version: 3.5</td></tr>
      <tr><td align="left">covr_coverage: 0.984</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.154</td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -223,7 +223,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -232,7 +231,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -241,7 +239,6 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
@@ -267,7 +264,6 @@ digraph D {
      <tr><td align="left">Version: 1.15</td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_2 [ label=<
@@ -276,7 +272,6 @@ digraph D {
      <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -285,7 +280,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -294,7 +288,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -303,7 +296,6 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
@@ -329,7 +321,6 @@ digraph D {
      <tr><td align="left">Version: 1.15</td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.967</font></b></td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.314</font></b></td></tr>
    </table>>];
    
   pkg_2 [ label=<
@@ -338,7 +329,6 @@ digraph D {
      <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.987</font></b></td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.148</font></b></td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -347,7 +337,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -356,7 +345,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -365,7 +353,6 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
