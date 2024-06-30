@@ -275,18 +275,18 @@ digraph D {
    <table border="1" cellborder="0" cellspacing="1">
      <tr><td align="left"><b>pkg_1</b></td></tr>
      <tr><td align="left">Version: 1.15</td></tr>
-     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_2 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
      <tr><td align="left"><b>pkg_2</b></td></tr>
      <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
-     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_3 [ label=<
