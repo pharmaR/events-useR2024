@@ -6,8 +6,6 @@ author:
 reference-location: margin
 ---
 
-
-
 ## A Universal Conundrum {.scrollable}
 
 _There are `n` packages for `x`, which one is the best?[^1]_
@@ -24,8 +22,6 @@ Coline
 - Which one is right for me?
 :::
 
-
-
 ## A Universal Conundrum
 
 ### By choosing packages, we're choosing our [^2]
@@ -38,16 +34,11 @@ Coline
 
 [^2]: [It depends: A dialog about dependencies, Jim Hester (2019)](https://www.jimhester.com/talk/2019-rsc-deps/)
 
-
-
 ## A Universal Conundrum
 
 ### Regulated Industries: Justification as a Requirement
 
 ![](resources/white_paper_guidelines.png)
-
-
-
 
 ## Goals
 
@@ -178,7 +169,6 @@ Added fields for risk-based assessment
 ```{.yaml code-line-numbers="4-5"}
 riskmetric_run_date: 2023-06-21
 riskmetric_version: 0.2.1
-pkg_score: 0.29
 covr_coverage: 0.852
 has_vignettes: 1
 remote_checks: 0.846
@@ -547,7 +537,6 @@ Yann
 * Protect your investment in R while supporting the common good
 
 * (NOTE: link to GH join us issue, add R Consortium info)
-
 
 ## Thank you
 
