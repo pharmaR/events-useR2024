@@ -481,6 +481,7 @@ Yann
 - Should mimic environments of companies and health authority reviewers
 - To be used by the Regulatory R Repository for packages cohort validation
 - Can be extended with workbench tool (e.g., Shiny app)
+- Main intent: start a cross-company dialogue
 
 # Closing
 
