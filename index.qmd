@@ -6,8 +6,6 @@ author:
 reference-location: margin
 ---
 
-
-
 ## A Universal Conundrum {.scrollable}
 
 _There are `n` packages for `x`, which one is the best?[^1]_
@@ -24,8 +22,6 @@ Coline
 - Which one is right for me?
 :::
 
-
-
 ## A Universal Conundrum
 
 ### By choosing packages, we're choosing our [^2]
@@ -38,16 +34,11 @@ Coline
 
 [^2]: [It depends: A dialog about dependencies, Jim Hester (2019)](https://www.jimhester.com/talk/2019-rsc-deps/)
 
-
-
 ## A Universal Conundrum
 
 ### Regulated Industries: Justification as a Requirement
 
 ![](resources/white_paper_guidelines.png)
-
-
-
 
 ## Goals
 
@@ -66,16 +57,11 @@ Coline
 
 - (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
 
-
-
 # Pilot Implementation
 
 _focus on proving capabilities, quick development_
 
 ![](resources/pilot.drawio.svg)
-
-
-
 
 # Interacting with the repo
 
@@ -92,7 +78,7 @@ _focus on proving capabilities, quick development_
 ::: {.column width="50%"}
 ```{mermaid}
 flowchart TD
-  A[All packages] --> B{Code\n coverage\n > 95%?}
+  A[All packages] --> B{Code\n covr.\n > 95%?}
   B -- Yes --> C{Has\n doc.?}
   C -- Yes --> D(Available for safety-critical activities)
 ```
@@ -138,7 +124,7 @@ summarize_available_packages(pkgs_nofltr)
 #| echo: true
 #| eval: false
 fltr <- risk_filter(covr_coverage > 0.95
-  && has_vignettes)
+  & has_vignettes)
 options(available_packages_filters = fltr)
 available.packages()
 ```
@@ -162,36 +148,34 @@ Yann
 ::: columns
 ::: {.column width="50%"}
 - Hosts risk assessment metadata
+- Links to artifacts of the R-hub check system (via `DownloadURL`)
 - Integrates with `pak::pkg_install`
 - Supports multiple levels of risk tolerance
-- Should allow for reproducible package installation to support historical analysis (snapshot, etc.)
 :::
 
 ::: {.column width="50%"}
 DCF file forked from ``r-hub/repo``
-```{.yaml code-line-numbers="10"}
+```{.yaml}
 Package: bslib
 Version: 0.6.1
 Depends: R (>= 2.10), R (>= 4.4), R (< 4.4.99)
 License: MIT + file LICENSE
+DownloadURL:
+         https://github.com/cran/bslib/releases/download/0.6.1/bslib_0.6.1_b4_R4.4_x86_64-pc-linux-gnu-ubuntu-22.04.tar.gz
 Built: R 4.4.0; ; 2023-11-29 16:39:06 UTC; unix
 RVersion: 4.4
 Platform: x86_64-pc-linux-gnu-ubuntu-22.04
 Imports: base64enc, cachem, grDevices, htmltools (>= 0.5.7), jquerylib (>= 0.1.3),
          jsonlite, lifecycle, memoise (>= 2.0.1), mime, rlang, sass (>= 0.4.0)
-DownloadURL: https://github.com/cran/bslib/releases/download/0.7.0/bslib_0.7.0_b2_R4.5_x86_64-pc-linux-gnu-ubuntu-22.04.tar.gz
 ...
 ```
-
 Added fields for risk-based assessment
-
-```{.yaml code-line-numbers="4-5"}
+```{.yaml}
 riskmetric_run_date: 2023-06-21
 riskmetric_version: 0.2.1
-pkg_score: 0.29
-covr_coverage: 0.85
+covr_coverage: 0.852
 has_vignettes: 1
-remote_checks: 0.84
+remote_checks: 0.846
 ...
 ```
 :::
@@ -205,9 +189,20 @@ Yann
 
 ### Risk assessment pipeline
 
-- Calculate package QA metadata on updated packages and their reverse dependencies
-- Produces logs and other reproducibility data
-- Should be able to additionally run on private infrastructure
+:::: {.columns}
+::: {.column width="34%"}
+![](resources/package-inspect-svgrepo-com.svg)
+Calculates package QA metadata on updated packages and their reverse dependencies
+:::
+::: {.column width="33%"}
+Produces logs and other reproducibility data
+![](resources/document-code-2-svgrepo-com.svg)
+:::
+::: {.column width="33%"}
+![](resources/house-svgrepo-com.svg)
+In the future: can run on in-house infrastructure
+:::
+::::
 
 ::: {.notes}
 Yann
@@ -225,7 +220,6 @@ digraph D {
      <tr><td align="left">Version: 1.15</td></tr>
      <tr><td align="left">covr_coverage: 0.967</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.359</td></tr>
    </table>>];
    
   pkg_2 [ label=<
@@ -234,7 +228,6 @@ digraph D {
      <tr><td align="left">Version: 3.5</td></tr>
      <tr><td align="left">covr_coverage: 0.984</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.154</td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -243,7 +236,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -252,7 +244,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -261,7 +252,6 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
@@ -285,18 +275,16 @@ digraph D {
    <table border="1" cellborder="0" cellspacing="1">
      <tr><td align="left"><b>pkg_1</b></td></tr>
      <tr><td align="left">Version: 1.15</td></tr>
-     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_2 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
      <tr><td align="left"><b>pkg_2</b></td></tr>
      <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
-     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>   </td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">...</font></b>   </td></tr>
+     <tr><td align="left">covr_coverage: <b><font color="darkgreen">...</font></b>      </td></tr>
+     <tr><td align="left">has_vignettes: <b><font color="darkgreen">...</font></b>      </td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -305,7 +293,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -314,7 +301,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -323,7 +309,6 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
@@ -349,7 +334,6 @@ digraph D {
      <tr><td align="left">Version: 1.15</td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.967</font></b></td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.314</font></b></td></tr>
    </table>>];
    
   pkg_2 [ label=<
@@ -358,7 +342,6 @@ digraph D {
      <tr><td align="left">Version: <b><font color="darkgreen">3.6</font></b></td></tr>
      <tr><td align="left">covr_coverage: <b><font color="darkgreen">0.987</font></b></td></tr>
      <tr><td align="left">has_vignettes: <b><font color="darkgreen">1</font></b></td></tr>
-     <tr><td align="left">pkg_score: <b><font color="darkgreen">0.148</font></b></td></tr>
    </table>>];
    
   pkg_3 [ label=<
@@ -367,7 +350,6 @@ digraph D {
      <tr><td align="left">Version: 1.9</td></tr>
      <tr><td align="left">covr_coverage: 0.992</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.312</td></tr>
    </table>>];
    
   pkg_4 [ label=<
@@ -376,7 +358,6 @@ digraph D {
      <tr><td align="left">Version: 0.5</td></tr>
      <tr><td align="left">covr_coverage: 0.864</td></tr>
      <tr><td align="left">has_vignettes: 0</td></tr>
-     <tr><td align="left">pkg_score: 0.414</td></tr>
    </table>>];
    
   pkg_5 [ label=<
@@ -385,119 +366,12 @@ digraph D {
      <tr><td align="left">Version: 4.2</td></tr>
      <tr><td align="left">covr_coverage: 0.924</td></tr>
      <tr><td align="left">has_vignettes: 1</td></tr>
-     <tr><td align="left">pkg_score: 0.234</td></tr>
    </table>>];
 
   pkg_2 -> pkg_1;
   pkg_3 -> pkg_1;
   pkg_3 -> pkg_2;
   pkg_5 -> pkg_4;
-}
-```
-
-::: {.notes}
-Yann
-:::
-
-## Implementation: get new releases from Github
-
-```{.r echo=TRUE eval=FALSE code-line-numbers="2,4-6,8,12-14,25"}
-i <- 1
-df_releases <- dplyr::tibble()
-for (i in seq_along(gh_repos)) {
-  user_repo_i <- gh_repos[i]
-  url_old_i <- packages_old[i, "DownloadURL"]
-  name_old_i <- packages_old[i, "File"]
-
-  # fetch release assets from the Github API
-  j <- 1
-  ls_releases_i <- list()
-  repeat {
-    ls_releases_ij <- gh(sprintf("GET /repos/%s/releases", user_repo_i),
-      per_page = 100, page = j
-    )
-    if (length(ls_releases_ij) == 0) {
-      break
-    }
-    ls_releases_i <- c(ls_releases_i, ls_releases_ij)
-    if (length(ls_releases_ij) < 100) {
-      break
-    }
-    j <- j + 1
-  }
-
-  # add the list of release assets to a data frame
-  df_releases <- ls_releases_i %>%
-    lapply(function(ls_releases_ij) {
-      lapply(ls_releases_ij[["assets"]], function(asset) {
-        asset["uploader"] <- NULL
-        asset
-      }) %>%
-        dplyr::bind_rows()
-    }) %>%
-    dplyr::bind_rows() %>%
-    dplyr::mutate(
-      user_repo = user_repo_i,
-      url_old = url_old_i,
-      name_old = name_old_i
-    ) %>%
-    rbind(df_releases)
-}
-```
-
-## Implementation: post-process the results
-
-
-```{.r echo=TRUE eval=FALSE code-line-numbers="1,7-9,14-16,23"}
-df_cmp_releases <- df_releases %>%
-  dplyr::select(
-    user_repo, name, created_at, browser_download_url, url_old,
-    name_old
-  ) %>%
-  dplyr::rename(url = browser_download_url) %>%
-  dplyr::filter(stringr::str_detect(
-    .$name, stringr::coll("R4.4_x86_64-pc-linux-gnu-ubuntu-22.04")
-  )) %>%
-  dplyr::mutate(
-    created_at = lubridate::as_datetime(created_at, format = "%Y-%Om-%dT%H:%M:%SZ"),
-    libc = stringr::str_detect(url, "\\-libc")
-  ) %>%
-  dplyr::arrange(user_repo, libc, dplyr::desc(created_at)) %>%
-  dplyr::group_by(user_repo) %>%
-  dplyr::slice_head(n = 1) %>%
-  dplyr::ungroup() %>%
-  dplyr::mutate(
-    pkg = stringr::str_split_i(user_repo, "/", 2),
-    ver = stringr::str_split_i(name, "_", 2),
-    ver_old = stringr::str_extract(url_old, "download/(.+)/", group = 1)
-  ) %>%
-  dplyr::select(pkg, name, name_old, ver, ver_old, url)
-```
-
-## Implementation: update metrics
-
-```{.r echo=TRUE eval=FALSE code-line-numbers="1-2,10-13,19"}
-df_pkg_diff <- df_cmp_releases %>%
-  dplyr::filter(ver != ver_old)
-
-if (nrow(df_pkg_diff)) {
-  # calculate risk metrics
-
-  opt_repos_init <- getOption("repos")
-  options(repos = c("CRAN" = "https://cran.rstudio.com"))
-
-  df_pkg_metrics <- df_pkg_diff$pkg %>%
-    riskmetric::pkg_ref(source = "pkg_cran_remote") %>%
-    riskmetric::pkg_assess() %>%
-    riskmetric::pkg_score() %>%
-    cbind(df_pkg_diff) %>%
-    dplyr::select(-c(pkg, ver, pkg_ref))
-
-  options(repos = opt_repos_init)
-
-  # replace PACKAGES file
-  
-  # ...
 }
 ```
 
@@ -515,9 +389,20 @@ _Automating up-to-date quality metrics to support sponsor risk assessment_
 
 ## Reference container image(s)
 
-- Should mimic environments of companies and health authority reviewers
-- Integrates with most modern analytic workbench tools and an evaluation pipeline
-- To be used by the Regulatory R Repository for packages cohort validation
+:::: {.columns}
+::: {.column width="34%"}
+![](resources/laptop-svgrepo-com.svg)
+Should mimic environments of companies and health authority reviewers
+:::
+::: {.column width="33%"}
+To be used by the Regulatory R Repository for packages cohort validation
+![](resources/settings-gear-svgrepo-com.svg)
+:::
+::: {.column width="33%"}
+![](resources/dialog-svgrepo-com.svg)
+Main intent: start a cross-company dialogue on infrastructure
+:::
+::::
 
 # Closing
 
@@ -589,12 +474,10 @@ R/Medicine, R/Pharma, useR!, LatinR, and more
 
 ![](resources/rc-logo.png){ width="60%" .nostretch }
 
-
 * Help guide the future direction of the R language
 * Collaborate on cross industry initiatives
 * Raise your leadership profile in the R Community
 * Protect your investment in R while supporting the common good
-
 
 ## Thank you
 
