@@ -189,13 +189,17 @@ Yann
 ### Risk assessment pipeline
 
 :::: {.columns}
-::: {.column width="40%"}
-`\symbol{"0394}`{=latex}MAT
+::: {.column width="34%"}
+![](resources/package-inspect-svgrepo-com.svg)
+Calculates package QA metadata on updated packages and their reverse dependencies
 :::
-
-::: {.column width="60%"}
-- Calculates package QA metadata on updated packages and their reverse dependencies
-- Produces logs and other reproducibility data
+::: {.column width="33%"}
+Produces logs and other reproducibility data
+![](resources/document-code-2-svgrepo-com.svg)
+:::
+::: {.column width="33%"}
+![](resources/house-svgrepo-com.svg)
+In the future: can run on in-house infrastructure
 :::
 ::::
 
@@ -384,10 +388,20 @@ _Automating up-to-date quality metrics to support sponsor risk assessment_
 
 ## Reference container image(s)
 
-- Should mimic environments of companies and health authority reviewers
-- To be used by the Regulatory R Repository for packages cohort validation
-- Can be extended with workbench tool (e.g., Shiny app)
-- Main intent: start a cross-company dialogue
+:::: {.columns}
+::: {.column width="34%"}
+![](resources/laptop-svgrepo-com.svg)
+Should mimic environments of companies and health authority reviewers
+:::
+::: {.column width="33%"}
+To be used by the Regulatory R Repository for packages cohort validation
+![](resources/settings-gear-svgrepo-com.svg)
+:::
+::: {.column width="33%"}
+![](resources/dialog-svgrepo-com.svg)
+Main intent: start a cross-company dialogue on infrastructure
+:::
+::::
 
 # Closing
 
