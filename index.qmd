@@ -148,7 +148,6 @@ Yann
 - Hosts risk assessment metadata
 - Integrates with `pak::pkg_install`
 - Supports multiple levels of risk tolerance
-- Should allow for reproducible package installation to support historical analysis (snapshot, etc.)
 :::
 
 ::: {.column width="50%"}
@@ -480,8 +479,8 @@ Yann
 ## Reference container image(s)
 
 - Should mimic environments of companies and health authority reviewers
-- Integrates with most modern analytic workbench tools and an evaluation pipeline
 - To be used by the Regulatory R Repository for packages cohort validation
+- Can be extended with workbench tool (e.g., Shiny app)
 
 # Closing
 
