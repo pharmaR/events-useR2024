@@ -196,7 +196,6 @@ Yann
 ::: {.column width="60%"}
 - Calculates package QA metadata on updated packages and their reverse dependencies
 - Produces logs and other reproducibility data
-- Should be able to additionally run on private infrastructure
 :::
 ::::
 
