@@ -1,9 +1,12 @@
 ---
-title: "Supporting Companies With Validation of R Packages - A Regulatory Repository"
+title: "Supporting Companies With Validation of R Packages 
+- A Regulatory Repository"
 author:
   - name: "<span>Coline Zeballos</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://www.roche.com'>Roche</a></span>"
   - name: "<span>Yann Féat</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://mainanalytics.de'>mainanalytics</a></span>"
 reference-location: margin
+
+[useR! 2024, July 9th]
 ---
 
 ## A Universal Conundrum {.scrollable}
