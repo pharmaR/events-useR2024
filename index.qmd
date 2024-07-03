@@ -1,12 +1,10 @@
 ---
-title: "Supporting Companies With Validation of R Packages 
-- A Regulatory Repository"
+title: "Supporting Companies With Validation of R Packages: A Regulatory Repository"
 author:
   - name: "<span>Coline Zeballos</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://www.roche.com'>Roche</a></span>"
   - name: "<span>Yann Féat</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://mainanalytics.de'>mainanalytics</a></span>"
+institute: "<em>useR! 2024, July 9th</em>"
 reference-location: margin
-
-[useR! 2024, July 9th]
 ---
 
 ## A Universal Conundrum {.scrollable}
@@ -58,7 +56,43 @@ Coline
 
 ## An evolving R ecosystem
 
-- (NOTE: show interaction between CRAN, RVH Reg R Repo (us), RC Submissions WG, RC Repositories WG, pharmaverse, other?)
+> In close communication with many beloved R projects
+
+:::{ .columns }
+
+:::{ .column .center .panel width="29%" }
+![](resources/rc-logo.png)
+
+### Submissions Working Group
+:::
+
+:::{ .column .center .panel width="29%" }
+![](resources/rc-logo.png)
+
+### Repositories Working Group
+:::
+
+:::{ .column .center .panel width="29%" }
+![](resources/pharmaverse.png){ width="30%" }
+
+### `pharmaverse`
+:::
+
+:::{ .column .center .panel width="29%" }
+![](resources/r-hub.png){ width="50%" }
+
+targetting `repos` integration
+:::
+
+:::{ .column .center .panel width="29%" }
+![](resources/r-lib.png){ width="40%" }
+
+### `r-lib/pak`
+
+targetting `pak` integration
+:::
+
+:::
 
 # Pilot Implementation
 
@@ -192,17 +226,23 @@ Yann
 
 ### Risk assessment pipeline
 
+
 :::: {.columns}
-::: {.column width="34%"}
-![](resources/package-inspect-svgrepo-com.svg)
+::: { .column .center width="32%" }
+![](resources/package-inspect-svgrepo-com.svg){ width="50%" height="50%" }
+
 Calculates package QA metadata on updated packages and their reverse dependencies
 :::
-::: {.column width="33%"}
+
+::: {.column .center width="32%"}
+![](resources/document-code-2-svgrepo-com.svg){ width="50%" height="50%" }
+
 Produces logs and other reproducibility data
-![](resources/document-code-2-svgrepo-com.svg)
 :::
-::: {.column width="33%"}
-![](resources/house-svgrepo-com.svg)
+
+::: {.column .center width="32%"}
+![](resources/house-svgrepo-com.svg){ width="50%" height="50%" }
+
 In the future: can run on in-house infrastructure
 :::
 ::::
@@ -393,16 +433,21 @@ _Automating up-to-date quality metrics to support sponsor risk assessment_
 ## Reference container image(s)
 
 :::: {.columns}
-::: {.column width="34%"}
-![](resources/laptop-svgrepo-com.svg)
+::: {.column .center width="32%"}
+![](resources/laptop-svgrepo-com.svg){ width="50%" height="50%" }
+
 Should mimic environments of companies and health authority reviewers
 :::
-::: {.column width="33%"}
+
+::: {.column .center width="32%"}
+![](resources/settings-gear-svgrepo-com.svg){ width="50%" height="50%" }
+
 To be used by the Regulatory R Repository for packages cohort validation
-![](resources/settings-gear-svgrepo-com.svg)
 :::
-::: {.column width="33%"}
-![](resources/dialog-svgrepo-com.svg)
+
+::: {.column .center width="32%"}
+![](resources/dialog-svgrepo-com.svg){ width="50%" height="50%" }
+
 Main intent: start a cross-company dialogue on infrastructure
 :::
 ::::
@@ -486,21 +531,27 @@ R/Medicine, R/Pharma, useR!, LatinR, and more
 
 ### To our Core Team members
 
-* Coline Zeballos, Roche
-* Doug Kelkhoff, Roche
-* Jaime Pires, Roche
-* Yann Féat, mainanalytics
-* Andrew Borgman, Biogen
-* Astrid Radermacher, Jumping Rivers
-* Colin Gillespie, Jumping Rivers
-* Magnus Mengelbier, Limelogic
-* Nicoles Jones, Denali Therapeutics
-* Ramiro Magno, Pattern Institute
-* Stefan Doering, Boehringer-Ingelheim
-* Kevin Kunzmann, Boehringer-Ingelheim
-* Matthias Trampisch, Boehringer-Ingelheim
-* Wilmar Igl, Icon Plc
-* Lluís Revilla, IrsiCaixa AIDS Research Institute
-* Yoni Sidi, Pinpoint Strategies
-* Zhenglei Gao, Bayer
+::: {.columns}
+::: {.column width="50%"}
+* Coline Zeballos, <em>Roche</em>
+* Doug Kelkhoff, <em>Roche</em>
+* Jaime Pires, <em>Roche</em>
+* Yann Féat, <em>mainanalytics</em>
+* Andrew Borgman, <em>Biogen</em>
+* Astrid Radermacher, <em>Jumping Rivers</em>
+* Colin Gillespie, <em>Jumping Rivers</em>
+* Magnus Mengelbier, <em>Limelogic</em>
+* Nicoles Jones, <em>Denali Therapeutics</em>
+:::
+::: {.column width="50%"}
+* Ramiro Magno, <em>Pattern Institute</em>
+* Stefan Doering, <em>Boehringer-Ingelheim</em>
+* Kevin Kunzmann, <em>Boehringer-Ingelheim</em>
+* Matthias Trampisch, <em>Boehringer-Ingelheim</em>
+* Wilmar Igl, <em>Icon Plc</em>
+* Lluís Revilla, <em>IrsiCaixa AIDS Research Institute</em>
+* Yoni Sidi, <em>Pinpoint Strategies</em>
+* Zhenglei Gao, <em>Bayer</em>
+:::
+:::
 

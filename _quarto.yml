@@ -7,3 +7,4 @@ format:
     df-print: kable
     mermaid:
       theme: default
+    slide-number: true
