@@ -1,5 +1,5 @@
 ---
-title: "Regulatory Repositories"
+title: "Supporting Companies With Validation of R Packages - A Regulatory Repository"
 author:
   - name: "<span>Coline Zeballos</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://www.roche.com'>Roche</a></span>"
   - name: "<span>Yann Féat</span> <span style='font-style: italic; margin-left: 0.5em;'><a href='http://mainanalytics.de'>mainanalytics</a></span>"
@@ -481,4 +481,23 @@ R/Medicine, R/Pharma, useR!, LatinR, and more
 
 ## Thank you
 
-* (NOTE: list of Core team members)
+### To our Core Team members
+
+* Coline Zeballos, Roche
+* Doug Kelkhoff, Roche
+* Jaime Pires, Roche
+* Yann Féat, mainanalytics
+* Andrew Borgman, Biogen
+* Astrid Radermacher, Jumping Rivers
+* Colin Gillespie, Jumping Rivers
+* Magnus Mengelbier, Limelogic
+* Nicoles Jones, Denali Therapeutics
+* Ramiro Magno, Pattern Institute
+* Stefan Doering, Boehringer-Ingelheim
+* Kevin Kunzmann, Boehringer-Ingelheim
+* Matthias Trampisch, Boehringer-Ingelheim
+* Wilmar Igl, Icon Plc
+* Lluís Revilla, IrsiCaixa AIDS Research Institute
+* Yoni Sidi, Pinpoint Strategies
+* Zhenglei Gao, Bayer
+
