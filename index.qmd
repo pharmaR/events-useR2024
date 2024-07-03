@@ -94,11 +94,11 @@ targetting `pak` integration
 
 :::
 
-# Pilot Implementation
+## Pilot Implementation
 
 _focus on proving capabilities, quick development_
 
-![](resources/pilot.drawio.svg)
+![](resources/pilot.drawio.svg){ style='width: 100%; height: 100%; margin: 2em 0;' }
 
 # Interacting with the repo
 
@@ -428,7 +428,7 @@ Yann
 
 _Automating up-to-date quality metrics to support sponsor risk assessment_
 
-![](resources/next-steps.drawio.svg)
+![](resources/next-steps.drawio.svg){ style='width: 100%; height: 100%; margin: 2em 0;' }
 
 ## Reference container image(s)
 
@@ -531,8 +531,8 @@ R/Medicine, R/Pharma, useR!, LatinR, and more
 
 ### To our Core Team members
 
-::: {.columns}
-::: {.column width="50%"}
+::: { .columns }
+::: { .column style="font-size: 0.85em; width: 30%;" }
 * Coline Zeballos, <em>Roche</em>
 * Doug Kelkhoff, <em>Roche</em>
 * Jaime Pires, <em>Roche</em>
@@ -540,13 +540,15 @@ R/Medicine, R/Pharma, useR!, LatinR, and more
 * Andrew Borgman, <em>Biogen</em>
 * Astrid Radermacher, <em>Jumping Rivers</em>
 * Colin Gillespie, <em>Jumping Rivers</em>
+:::
+::: { .column style="font-size: 0.85em; width: 30%;" }
 * Magnus Mengelbier, <em>Limelogic</em>
 * Nicoles Jones, <em>Denali Therapeutics</em>
-:::
-::: {.column width="50%"}
 * Ramiro Magno, <em>Pattern Institute</em>
 * Stefan Doering, <em>Boehringer-Ingelheim</em>
 * Kevin Kunzmann, <em>Boehringer-Ingelheim</em>
+:::
+::: { .column style="font-size: 0.85em; width: 30%;" }
 * Matthias Trampisch, <em>Boehringer-Ingelheim</em>
 * Wilmar Igl, <em>Icon Plc</em>
 * Lluís Revilla, <em>IrsiCaixa AIDS Research Institute</em>
