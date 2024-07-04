@@ -191,7 +191,7 @@ Yann
 :::
 
 ::: {.column width="50%"}
-DCF file forked from ``r-hub/repo``
+DCF file forked from ``r-hub/repos``
 ```{.yaml}
 Package: bslib
 Version: 0.6.1
