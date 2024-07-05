@@ -43,15 +43,18 @@ Coline
 
 ## Goals
 
-- Provide a community-maintained catalog of package quality indicators ("risk metrics")
-- Serve quality indicators in a standard format
-- Thoroughly document the system used to perform quality assessment
-- Demonstrate how regulatory-ready risk assessments can be provided using public quality indicators
-- Serve subsets of packages that conform to a specified risk tolerance
-- Improve transparency of industry R package adoption, endorsement and regulator interaction
+We have two objectives:
+1. Generation of risk-based quality indicators
+2. Package recommendations
 
 ::: {.notes}
 Coline
+- Provide a community-maintained catalog of package quality indicators ("risk metrics")
+- Serve quality indicators in a standard format
+- Document the system used to perform quality assessment
+- Demonstrate how regulatory-ready risk assessments can be provided using public quality indicators
+- Serve subsets of packages that conform to a specified risk tolerance
+- Improve transparency of industry R package adoption, endorsement and regulator interaction
 :::
 
 ## An evolving R ecosystem
