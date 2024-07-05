@@ -46,9 +46,10 @@ Coline
 We have two objectives:
 
 * Generation of risk-based quality indicators
-
+- Provide a community-maintained catalog of package quality indicators ("risk metrics")
 
 * Package recommendations
+- Serve subsets of packages that conform to a specified risk tolerance
 
 ::: {.notes}
 Coline
