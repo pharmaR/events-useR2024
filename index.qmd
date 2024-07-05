@@ -44,8 +44,11 @@ Coline
 ## Goals
 
 We have two objectives:
-1. Generation of risk-based quality indicators
-2. Package recommendations
+
+* Generation of risk-based quality indicators
+
+
+* Package recommendations
 
 ::: {.notes}
 Coline
