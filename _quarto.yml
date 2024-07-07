@@ -3,6 +3,8 @@ project:
 
 format:
   rvalhub-revealjs:
+    width: 1280
+    height: 720
     fontsize: 30px
     df-print: kable
     mermaid:
